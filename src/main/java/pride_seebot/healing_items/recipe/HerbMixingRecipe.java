@@ -20,7 +20,6 @@ public class HerbMixingRecipe extends SpecialCraftingRecipe {
     @Override
     public boolean matches(CraftingRecipeInput input, World world) {
         int herbCount = 0;
-        boolean hasPaper = false;
 
         for (int i = 0; i < input.getStacks().size(); i++) {
             ItemStack stack = input.getStackInSlot(i);
@@ -28,14 +27,12 @@ public class HerbMixingRecipe extends SpecialCraftingRecipe {
 
             if (stack.isOf(ModItems.GREEN_HERB) || stack.isOf(ModItems.RED_HERB) || stack.isOf(ModItems.BLUE_HERB)) {
                 herbCount++;
-            } else if (stack.isOf(net.minecraft.item.Items.PAPER)) {
-                hasPaper = true;
             } else {
-                return false; // Found something that isn't a herb or paper
+                return false;
             }
         }
-        // Only craft if we have 2-3 herbs AND the required paper
-        return herbCount >= 2 && herbCount <= 3 && hasPaper;
+        // Only craft if we have 2-3 herbs
+        return herbCount >= 2 && herbCount <= 3;
     }
 
     @Override
@@ -50,7 +47,6 @@ public class HerbMixingRecipe extends SpecialCraftingRecipe {
         }
 
         ItemStack result = new ItemStack(ModItems.MIXED_HERBS);
-        // Set our custom Data Component!
         result.set(ModDataComponentTypes.HERB_CONTENTS, ingredients);
         
         return result;
