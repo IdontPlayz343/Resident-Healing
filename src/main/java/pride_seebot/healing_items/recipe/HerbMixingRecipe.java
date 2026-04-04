@@ -1,6 +1,5 @@
 package pride_seebot.healing_items.recipe;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.CraftingRecipe;
 import net.minecraft.recipe.RecipeSerializer;
@@ -60,8 +59,8 @@ public class HerbMixingRecipe implements CraftingRecipe {
     }
 
     @Override
-    public ItemStack getResult(CraftingRecipeInput input) {
-        return craft(input, null);
+    public ItemStack getResult(RegistryWrapper.WrapperLookup lookup) {
+        return new ItemStack(ModItems.MIXED_HERBS);
     }
 
     @Override
