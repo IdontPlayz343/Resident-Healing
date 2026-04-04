@@ -1,0 +1,13 @@
+{
+  "item.healing-items.green_herb": "Green Herb",
+  "item.healing-items.green_herb.lore": "A common herb used for healing.",
+  
+  "item.healing-items.red_herb": "Red Herb",
+  "item.healing-items.red_herb.lore": "An herb that enhances the effects of other herbs. Useless without other herbs.",
+  
+  "item.healing-items.blue_herb": "Blue Herb",
+  "item.healing-items.blue_herb.lore": "A bitter leaf that neutralizes venom.",
+
+  "tooltip.healing-items.heal_amount": "Heals %s HP",
+  "tooltip.healing-items.cleanses": "Cleanses harmful toxins."
+}
