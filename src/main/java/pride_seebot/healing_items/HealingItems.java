@@ -3,7 +3,6 @@ package pride_seebot.healing_items;
 import net.fabricmc.api.ModInitializer;
 import pride_seebot.healing_items.component.ModDataComponentTypes;
 import pride_seebot.healing_items.item.ModItems;
-import pride_seebot.healing_items.recipe.ModRecipes;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,13 +17,7 @@ public class HealingItems implements ModInitializer {
 
 	@Override
     public void onInitialize() {
-        // 1. REGISTER COMPONENTS FIRST
         ModDataComponentTypes.registerDataComponentTypes();
-
-        // 2. REGISTER ITEMS SECOND
         ModItems.registerModItems();
-
-        // 3. REGISTER RECIPES THIRD
-        ModRecipes.registerRecipes();
     }
 }

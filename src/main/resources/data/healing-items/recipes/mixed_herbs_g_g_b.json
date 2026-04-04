@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:shapeless",
+  "ingredients": [
+    {
+      "item": "healing-items:green_herb"
+    },
+    {
+      "item": "healing-items:green_herb"
+    },
+    {
+      "item": "healing-items:blue_herb"
+    }
+  ],
+  "result": {
+    "id": "healing-items:mixed_herbs",
+    "count": 1,
+    "components": {
+      "healing-items:herb_contents": ["green", "green", "blue"]
+    }
+  }
+}
