@@ -8,6 +8,7 @@
       "item": "healing-items:green_herb"
     }
   ],
+  
   "result": {
     "id": "healing-items:mixed_herbs",
     "count": 1,

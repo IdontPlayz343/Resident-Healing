@@ -19,6 +19,7 @@ public class MixedHerb extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
         
+        
         // Get the list of herbs from the data component
         List<String> contents = stack.get(ModDataComponentTypes.HERB_CONTENTS);
 
