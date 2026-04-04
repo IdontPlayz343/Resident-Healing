@@ -16,7 +16,7 @@ public class ModItems {
     public static final Item BLUE_HERB = registerItem("blue_herb", 
         new HerbItem(2.0f, "clearEffects", new Item.Settings().maxCount(1)));
     public static final Item MIXED_HERBS = registerItem("mixed_herbs", 
-        new Item(new Item.Settings().maxCount(1)));
+        new MixedHerb(new Item.Settings().maxCount(1)));
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(HealingItems.MOD_ID, name), item);
     }
