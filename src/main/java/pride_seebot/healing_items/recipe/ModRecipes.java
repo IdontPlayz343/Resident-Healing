@@ -1,6 +1,8 @@
 package pride_seebot.healing_items.recipe;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.network.RegistryByteBuf;
+import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.registry.Registries;
@@ -19,12 +21,8 @@ public class ModRecipes {
                 }
 
                 @Override
-                public HerbMixingRecipe read(net.minecraft.network.RegistryByteBuf buf) {
-                    return new HerbMixingRecipe(CraftingRecipeCategory.MISC);
-                }
-
-                @Override
-                public void write(net.minecraft.network.RegistryByteBuf buf, HerbMixingRecipe recipe) {
+                public PacketCodec<RegistryByteBuf, HerbMixingRecipe> packetCodec() {
+                    return PacketCodec.unit(new HerbMixingRecipe(CraftingRecipeCategory.MISC));
                 }
             }
     );
