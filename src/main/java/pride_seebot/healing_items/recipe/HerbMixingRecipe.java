@@ -1,8 +1,7 @@
 package pride_seebot.healing_items.recipe;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.recipe.CraftingRecipe;
-import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.SpecialCraftingRecipe;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.recipe.input.CraftingRecipeInput;
 import net.minecraft.registry.RegistryWrapper;
@@ -13,11 +12,9 @@ import pride_seebot.healing_items.item.ModItems;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HerbMixingRecipe implements CraftingRecipe {
-    private final CraftingRecipeCategory category;
-
+public class HerbMixingRecipe extends SpecialCraftingRecipe {
     public HerbMixingRecipe(CraftingRecipeCategory category) {
-        this.category = category;
+        super(category);
     }
 
     @Override
@@ -59,17 +56,7 @@ public class HerbMixingRecipe implements CraftingRecipe {
     }
 
     @Override
-    public ItemStack getResult(RegistryWrapper.WrapperLookup lookup) {
-        return new ItemStack(ModItems.MIXED_HERBS);
-    }
-
-    @Override
-    public RecipeSerializer<?> getSerializer() {
+    public net.minecraft.recipe.RecipeSerializer<?> getSerializer() {
         return ModRecipes.HERB_MIXING;
-    }
-
-    @Override
-    public CraftingRecipeCategory getCategory() {
-        return category;
     }
 }
