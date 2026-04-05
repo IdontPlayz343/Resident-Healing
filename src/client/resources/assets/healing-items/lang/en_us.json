@@ -1,13 +1,17 @@
 {
   "item.healing-items.green_herb": "Green Herb",
-  "item.healing-items.green_herb.lore": "A common herb used for healing.",
+  "item.healing-items.green_herb.lore": "An herb that heals.",
   
   "item.healing-items.red_herb": "Red Herb",
   "item.healing-items.red_herb.lore": "An herb that enhances the effects of other herbs. Useless without other herbs.",
   
   "item.healing-items.blue_herb": "Blue Herb",
-  "item.healing-items.blue_herb.lore": "A bitter leaf that neutralizes venom.",
+  "item.healing-items.blue_herb.lore": "An herb that cures any ailement.",
 
-  "tooltip.healing-items.heal_amount": "Heals %s HP",
-  "tooltip.healing-items.cleanses": "Cleanses harmful toxins."
+  "tooltip.healing-items.heal_amount": "Heals %s hearts",
+  "tooltip.healing-items.cleanses_poisons": "Cures Poison and Nausea.",
+  "tooltip.healing-items.cleanses": "Removes all harmful status effects.",
+
+  "item.healing-items.mixed_herbs": "Mixed Herbs",
+  "item.healing-items.mixed_herbs.empty": "Uncraftable Mixed Herbs"
 }

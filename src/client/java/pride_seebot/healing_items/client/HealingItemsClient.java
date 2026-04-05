@@ -8,6 +8,8 @@ import pride_seebot.healing_items.item.ModItems;
 import java.util.List;
 
 public class HealingItemsClient implements ClientModInitializer {
+
+
     @Override
     public void onInitializeClient() {
         // Register the color logic for the Mixed Herb item
@@ -28,9 +30,9 @@ public class HealingItemsClient implements ClientModInitializer {
 
             // Return the hex color based on the herb type
             return switch (herbType) {
-                case "green" -> 0x55FF55; // Bright Green
-                case "red"   -> 0xFF5555; // Bright Red
-                case "blue"  -> 0x5555FF; // Bright Blue
+                case "green" -> 0xFF55FF55; // Bright Green
+                case "red"   -> 0xFFFF5555; // Bright Red
+                case "blue"  -> 0xFF5555FF; // Bright Blue
                 default      -> -1;       // Default white
             };
         }, ModItems.MIXED_HERBS);

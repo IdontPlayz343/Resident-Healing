@@ -1,8 +1,8 @@
 package pride_seebot.healing_items.item;
 
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -34,10 +34,10 @@ public class HerbItem extends Item {
         tooltip.add(Text.translatable(loreKey).formatted(Formatting.GRAY));
 
         if ("heal".equals(this.useEffect)) {
-            tooltip.add(Text.translatable("tooltip.healing-items.heal_amount", this.healAmount)
+            tooltip.add(Text.translatable("tooltip.healing-items.heal_amount", this.healAmount/2)
                 .formatted(Formatting.GREEN));
         } else if ("clearEffects".equals(this.useEffect)) {
-            tooltip.add(Text.translatable("tooltip.healing-items.cleanses")
+            tooltip.add(Text.translatable("tooltip.healing-items.cleanses_poisons")
                 .formatted(Formatting.AQUA));
         }
     }
@@ -64,7 +64,7 @@ public class HerbItem extends Item {
         else if ("clearEffects".equals(this.useEffect)) {
             List<RegistryEntry<StatusEffect>> badEffects = new ArrayList<>();
             for (StatusEffectInstance instance : user.getStatusEffects()) {
-                if (instance.getEffectType().value().getCategory() == StatusEffectCategory.HARMFUL) {
+                if (instance.getEffectType().value() == StatusEffects.POISON || instance.getEffectType().value() == StatusEffects.NAUSEA) {
                     badEffects.add(instance.getEffectType());
                 }
             }
