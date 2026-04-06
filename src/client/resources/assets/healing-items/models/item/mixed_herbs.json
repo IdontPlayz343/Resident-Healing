@@ -1,9 +1,9 @@
 {
     "parent": "item/generated",
     "textures": {
-      "layer0": "healing-items:item/mixed_herb_paper",
-      "layer1": "healing-items:item/herb_layer_0",
-      "layer2": "healing-items:item/herb_layer_1",
-      "layer3": "healing-items:item/herb_layer_2"
+      "layer0": "resident_healing:item/mixed_herb_paper",
+      "layer1": "resident_healing:item/herb_layer_0",
+      "layer2": "resident_healing:item/herb_layer_1",
+      "layer3": "resident_healing:item/herb_layer_2"
     }
   }

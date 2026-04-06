@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-      "layer0": "healing-items:item/steroids"
+      "layer0": "resident_healing:item/steroids"
     }
   }

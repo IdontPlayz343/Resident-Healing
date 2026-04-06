@@ -1,4 +1,4 @@
-package pride_seebot.healing_items.client.mixin;
+package pride_seebot.resident_healing.client.mixin;
 
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;

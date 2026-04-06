@@ -1,4 +1,4 @@
-package pride_seebot.healing_items.item;
+package pride_seebot.resident_healing.item;
 
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -12,7 +12,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import pride_seebot.healing_items.component.ModDataComponentTypes;
+import pride_seebot.resident_healing.component.ModDataComponentTypes;
 import net.minecraft.text.Text;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class MixedHerb extends Item {
         List<String> contents = stack.get(ModDataComponentTypes.HERB_CONTENTS);
         
         if (contents == null || contents.isEmpty()) {
-            return Text.translatable("item.healing-items.mixed_herbs.empty");
+            return Text.translatable("item.resident_healing.mixed_herbs.empty");
         }
 
         String suffix = contents.stream()
@@ -57,20 +57,20 @@ public class MixedHerb extends Item {
 
         if (heal > 0 && cleanses && multiplier == 2.5f) {
             float total = (heal * multiplier)*2;
-            tooltip.add(Text.translatable("tooltip.healing-items.heal_amount", (int) total/2)
+            tooltip.add(Text.translatable("tooltip.resident_healing.heal_amount", (int) total/2)
                     .formatted(Formatting.GREEN));
         } else if (heal > 0) {
             float total = heal * multiplier;
-            tooltip.add(Text.translatable("tooltip.healing-items.heal_amount", (int) total/2)
+            tooltip.add(Text.translatable("tooltip.resident_healing.heal_amount", (int) total/2)
                     .formatted(Formatting.GREEN));
         }
 
         if (cleanses) {
             if (cleanses && multiplier == 2.5f) {
-                tooltip.add(Text.translatable("tooltip.healing-items.cleanses")
+                tooltip.add(Text.translatable("tooltip.resident_healing.cleanses")
                     .formatted(Formatting.AQUA));
             } else {
-                tooltip.add(Text.translatable("tooltip.healing-items.cleanses_poisons")
+                tooltip.add(Text.translatable("tooltip.resident_healing.cleanses_poisons")
                     .formatted(Formatting.AQUA));
             }
         }

@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "healing-items",
+	"id": "resident_healing",
 	"version": "${version}",
 	"name": "Healing Items",
 	"description": "This is an example description! Tell everyone what your mod is about!",
@@ -12,23 +12,23 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/healing-items/icon.png",
+	"icon": "assets/resident_healing/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"pride_seebot.healing_items.HealingItems"
+			"pride_seebot.resident_healing.ResidentHealing"
 		],
 		"client": [
-			"pride_seebot.healing_items.client.HealingItemsClient"
+			"pride_seebot.resident_healing.client.ResidentHealingClient"
 		],
 		"fabric-datagen": [
-			"pride_seebot.healing_items.client.HealingItemsDataGenerator"
+			"pride_seebot.resident_healing.client.ResidentHealingDataGenerator"
 		]
 	},
 	"mixins": [
-		"healing-items.mixins.json",
+		"resident_healing.mixins.json",
 		{
-			"config": "healing-items.client.mixins.json",
+			"config": "resident_healing.client.mixins.json",
 			"environment": "client"
 		}
 	],

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-      "layer0": "healing-items:item/red_herb"
+      "layer0": "resident_healing:item/red_herb"
     }
   }

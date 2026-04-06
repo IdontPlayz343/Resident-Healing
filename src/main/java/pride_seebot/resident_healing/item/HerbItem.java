@@ -1,4 +1,4 @@
-package pride_seebot.healing_items.item;
+package pride_seebot.resident_healing.item;
 
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -31,13 +31,13 @@ public class HerbItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         if ("heal".equals(this.useEffect)) {
-            tooltip.add(Text.translatable("tooltip.healing-items.heal_amount", (int) this.healAmount/2)
+            tooltip.add(Text.translatable("tooltip.resident_healing.heal_amount", (int) this.healAmount/2)
                 .formatted(Formatting.GREEN));
         } else if ("clearEffects".equals(this.useEffect)) {
-            tooltip.add(Text.translatable("tooltip.healing-items.cleanses_poisons")
+            tooltip.add(Text.translatable("tooltip.resident_healing.cleanses_poisons")
                 .formatted(Formatting.AQUA));
         } else {
-            tooltip.add(Text.translatable("tooltip.healing-items.multiplier_herb")
+            tooltip.add(Text.translatable("tooltip.resident_healing.multiplier_herb")
                 .formatted(Formatting.RED));
         }
     }

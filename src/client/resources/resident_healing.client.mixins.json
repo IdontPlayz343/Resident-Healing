@@ -1,9 +1,9 @@
 {
 	"required": true,
-	"package": "pride_seebot.healing_items.mixin",
+	"package": "pride_seebot.resident_healing.client.mixin",
 	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin"
+	"client": [
+		"ExampleClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

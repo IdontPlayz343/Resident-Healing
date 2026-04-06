@@ -1,6 +1,6 @@
-package pride_seebot.healing_items.item;
+package pride_seebot.resident_healing.item;
 
-import pride_seebot.healing_items.HealingItems;
+import pride_seebot.resident_healing.ResidentHealing;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -24,7 +24,7 @@ public class ModItems {
 
     
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(HealingItems.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, Identifier.of(ResidentHealing.MOD_ID, name), item);
     }
 
     public static void registerModItems() {
@@ -37,6 +37,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> {
             itemGroup.add(ModItems.STEROIDS);
         });
-        HealingItems.LOGGER.info("Registering Mod Items for " + HealingItems.MOD_ID);
+        ResidentHealing.LOGGER.info("Registering Mod Items for " + ResidentHealing.MOD_ID);
     }
 }
+

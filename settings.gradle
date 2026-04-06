@@ -10,4 +10,5 @@ pluginManagement {
 }
 
 // Should match your modid
-rootProject.name = 'healing-items'
+rootProject.name = 'resident_healing'
+

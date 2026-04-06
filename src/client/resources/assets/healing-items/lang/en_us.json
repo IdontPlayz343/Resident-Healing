@@ -1,19 +1,19 @@
 {
-  "item.healing-items.green_herb": "Green Herb",
-  "item.healing-items.red_herb": "Red Herb",
-  "item.healing-items.blue_herb": "Blue Herb",
+  "item.resident_healing.green_herb": "Green Herb",
+  "item.resident_healing.red_herb": "Red Herb",
+  "item.resident_healing.blue_herb": "Blue Herb",
 
-  "tooltip.healing-items.multiplier_herb": "Multiplies the effects of other herbs.",
-  "tooltip.healing-items.heal_amount": "Heals %s hearts of health.",
-  "tooltip.healing-items.cleanses_poisons": "Cures Poison and Nausea.",
-  "tooltip.healing-items.cleanses": "Removes all harmful status effects.",
+  "tooltip.resident_healing.multiplier_herb": "Multiplies the effects of other herbs.",
+  "tooltip.resident_healing.heal_amount": "Heals %s hearts of health.",
+  "tooltip.resident_healing.cleanses_poisons": "Cures Poison and Nausea.",
+  "tooltip.resident_healing.cleanses": "Removes all harmful status effects.",
 
-  "item.healing-items.empty_injector": "Empty Injector",
+  "item.resident_healing.empty_injector": "Empty Injector",
 
-  "item.healing-items.steroids": "Steroids",
-  "message.healing-items.max_steroids": "Your body can't handle more steroids.",
-  "tooltip.healing-items.boost_health": "Boosts max health by 5 hearts, maximum 2 uses.",
+  "item.resident_healing.steroids": "Steroids",
+  "message.resident_healing.max_steroids": "Your body can't handle more steroids.",
+  "tooltip.resident_healing.boost_health": "Boosts max health by 5 hearts, maximum 2 uses.",
 
-  "item.healing-items.mixed_herbs": "Mixed Herbs",
-  "item.healing-items.mixed_herbs.empty": "Uncraftable Mixed Herbs"
+  "item.resident_healing.mixed_herbs": "Mixed Herbs",
+  "item.resident_healing.mixed_herbs.empty": "Uncraftable Mixed Herbs"
 }

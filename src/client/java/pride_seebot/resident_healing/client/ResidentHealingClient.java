@@ -1,13 +1,13 @@
-package pride_seebot.healing_items.client;
+package pride_seebot.resident_healing.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import pride_seebot.healing_items.component.ModDataComponentTypes;
-import pride_seebot.healing_items.item.ModItems;
+import pride_seebot.resident_healing.component.ModDataComponentTypes;
+import pride_seebot.resident_healing.item.ModItems;
 
 import java.util.List;
 
-public class HealingItemsClient implements ClientModInitializer {
+public class ResidentHealingClient implements ClientModInitializer {
 
 
     @Override

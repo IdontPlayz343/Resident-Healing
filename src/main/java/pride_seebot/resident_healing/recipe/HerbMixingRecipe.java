@@ -1,4 +1,4 @@
-package pride_seebot.healing_items.recipe;
+package pride_seebot.resident_healing.recipe;
 
 import com.google.common.collect.Maps;
 import net.minecraft.item.Item;
@@ -11,8 +11,8 @@ import net.minecraft.recipe.input.CraftingRecipeInput;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Util;
 import net.minecraft.world.World;
-import pride_seebot.healing_items.component.ModDataComponentTypes;
-import pride_seebot.healing_items.item.ModItems;
+import pride_seebot.resident_healing.component.ModDataComponentTypes;
+import pride_seebot.resident_healing.item.ModItems;
 
 import java.util.ArrayList;
 import java.util.List;

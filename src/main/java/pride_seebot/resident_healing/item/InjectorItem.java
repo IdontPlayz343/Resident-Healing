@@ -1,4 +1,4 @@
-package pride_seebot.healing_items.item;
+package pride_seebot.resident_healing.item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import pride_seebot.healing_items.HealingItems;
+import pride_seebot.resident_healing.ResidentHealing;
 
 public class InjectorItem extends Item {
     private final String injectorType;
@@ -27,7 +27,7 @@ public class InjectorItem extends Item {
     public static final double HEALTH_PER_USE = 10.0;
     public static final int MAX_USES = 2;
     
-    public static final Identifier STEROID_MODIFIER_ID = Identifier.of(HealingItems.MOD_ID, "steroid_uses");
+    public static final Identifier STEROID_MODIFIER_ID = Identifier.of(ResidentHealing.MOD_ID, "steroid_uses");
 
     public InjectorItem(String injectorType, Settings settings) {
         super(settings); 
@@ -37,7 +37,7 @@ public class InjectorItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         if ("steroids".equals(this.injectorType)) {
-            tooltip.add(Text.translatable("tooltip.healing-items.boost_health")
+            tooltip.add(Text.translatable("tooltip.resident_healing.boost_health")
                 .formatted(Formatting.YELLOW));
         }
     }
@@ -94,7 +94,7 @@ public class InjectorItem extends Item {
 
             return TypedActionResult.success(itemStack);
         } else {
-            user.sendMessage(Text.translatable("message.healing-items.max_steroids")
+            user.sendMessage(Text.translatable("message.resident_healing.max_steroids")
                 .formatted(Formatting.RED), true);
             return TypedActionResult.fail(itemStack);
         }
