@@ -55,9 +55,13 @@ public class MixedHerb extends Item {
             if (herb.equals("red")) multiplier = 2.5f;
         }
 
-        if (heal > 0) {
+        if (heal > 0 && cleanses && multiplier == 2.5f) {
+            float total = (heal * multiplier)*2;
+            tooltip.add(Text.translatable("tooltip.healing-items.heal_amount", (int) total/2)
+                    .formatted(Formatting.GREEN));
+        } else if (heal > 0) {
             float total = heal * multiplier;
-            tooltip.add(Text.translatable("tooltip.healing-items.heal_amount", total/2)
+            tooltip.add(Text.translatable("tooltip.healing-items.heal_amount", (int) total/2)
                     .formatted(Formatting.GREEN));
         }
 
@@ -101,6 +105,10 @@ public class MixedHerb extends Item {
             if (herb.equals("green")) totalHeal += 4.0f;
             if (herb.equals("blue")) clearPoison = true;
             if (herb.equals("red")) multiplier = 2.5f;
+        }
+        
+        if (herbs.contains("green") && herbs.contains("red") && herbs.contains("blue") ) {
+            totalHeal = 8.0f;
         }
 
         user.heal(totalHeal * multiplier);

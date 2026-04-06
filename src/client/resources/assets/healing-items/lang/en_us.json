@@ -1,16 +1,18 @@
 {
   "item.healing-items.green_herb": "Green Herb",
-  "item.healing-items.green_herb.lore": "An herb that heals.",
-  
   "item.healing-items.red_herb": "Red Herb",
-  "item.healing-items.red_herb.lore": "An herb that enhances the effects of other herbs. Useless without other herbs.",
-  
   "item.healing-items.blue_herb": "Blue Herb",
-  "item.healing-items.blue_herb.lore": "An herb that cures any ailement.",
 
-  "tooltip.healing-items.heal_amount": "Heals %s hearts",
+  "tooltip.healing-items.multiplier_herb": "Multiplies the effects of other herbs.",
+  "tooltip.healing-items.heal_amount": "Heals %s hearts of health.",
   "tooltip.healing-items.cleanses_poisons": "Cures Poison and Nausea.",
   "tooltip.healing-items.cleanses": "Removes all harmful status effects.",
+
+  "item.healing-items.empty_injector": "Empty Injector",
+
+  "item.healing-items.steroids": "Steroids",
+  "message.healing-items.max_steroids": "Your body can't handle more steroids.",
+  "tooltip.healing-items.boost_health": "Boosts max health by 5 hearts, maximum 2 uses.",
 
   "item.healing-items.mixed_herbs": "Mixed Herbs",
   "item.healing-items.mixed_herbs.empty": "Uncraftable Mixed Herbs"

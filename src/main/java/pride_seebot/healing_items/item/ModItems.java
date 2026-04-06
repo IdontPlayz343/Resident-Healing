@@ -17,6 +17,12 @@ public class ModItems {
         new HerbItem(2.0f, "clearEffects", new Item.Settings().maxCount(1)));
     public static final Item MIXED_HERBS = registerItem("mixed_herbs", 
         new MixedHerb(new Item.Settings().maxCount(1)));
+    public static final Item STEROIDS = registerItem("steroids", 
+        new InjectorItem("steroids", new Item.Settings().maxCount(1)));
+        public static final Item EMPTY_INJECTOR = registerItem("empty_injector", 
+        new Item(new Item.Settings().maxCount(1)));
+
+    
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(HealingItems.MOD_ID, name), item);
     }
@@ -24,8 +30,12 @@ public class ModItems {
     public static void registerModItems() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> {
             itemGroup.add(ModItems.GREEN_HERB);
-            itemGroup.add(ModItems.BLUE_HERB);
             itemGroup.add(ModItems.RED_HERB);
+            itemGroup.add(ModItems.BLUE_HERB);
+            itemGroup.add(ModItems.EMPTY_INJECTOR);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register((itemGroup) -> {
+            itemGroup.add(ModItems.STEROIDS);
         });
         HealingItems.LOGGER.info("Registering Mod Items for " + HealingItems.MOD_ID);
     }

@@ -30,15 +30,15 @@ public class HerbItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        String loreKey = this.getTranslationKey() + ".lore";
-        tooltip.add(Text.translatable(loreKey).formatted(Formatting.GRAY));
-
         if ("heal".equals(this.useEffect)) {
-            tooltip.add(Text.translatable("tooltip.healing-items.heal_amount", this.healAmount/2)
+            tooltip.add(Text.translatable("tooltip.healing-items.heal_amount", (int) this.healAmount/2)
                 .formatted(Formatting.GREEN));
         } else if ("clearEffects".equals(this.useEffect)) {
             tooltip.add(Text.translatable("tooltip.healing-items.cleanses_poisons")
                 .formatted(Formatting.AQUA));
+        } else {
+            tooltip.add(Text.translatable("tooltip.healing-items.multiplier_herb")
+                .formatted(Formatting.RED));
         }
     }
 
