@@ -9,6 +9,7 @@ import pride_seebot.resident_healing.component.ModDataComponentTypes;
 import pride_seebot.resident_healing.item.InjectorItem;
 import pride_seebot.resident_healing.item.ModItems;
 import pride_seebot.resident_healing.recipe.ModRecipes;
+import pride_seebot.resident_healing.util.ModLootTableModifiers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,12 +18,14 @@ public class ResidentHealing implements ModInitializer {
     public static final String MOD_ID = "resident_healing";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+
+
     @Override
     public void onInitialize() {
         ModDataComponentTypes.registerDataComponentTypes();
         ModItems.registerModItems();
         ModRecipes.registerRecipes();
-
+        ModLootTableModifiers.modifyLootTables();
         ServerPlayerEvents.COPY_FROM.register((oldPlayer, newPlayer, alive) -> {
             EntityAttributeInstance oldAttr = oldPlayer.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);
             EntityAttributeInstance newAttr = newPlayer.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH);

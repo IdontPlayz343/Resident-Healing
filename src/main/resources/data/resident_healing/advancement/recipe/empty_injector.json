@@ -1,0 +1,80 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+      "has_green_herb": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "resident_healing:green_herb"
+            }
+          ]
+        }
+      },
+      "has_red_herb": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "resident_healing:red_herb"
+            }
+          ]
+        }
+      },
+      "has_blue_herb": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "resident_healing:blue_herb"
+            }
+          ]
+        }
+      },
+      "has_mixed_herbs": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "resident_healing:mixed_herbs"
+            }
+          ]
+        }
+      },
+      "has_empty_injector": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "resident_healing:empty_injector"
+            }
+          ]
+        }
+      },
+      "has_steroids": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "resident_healing:steroids"
+            }
+          ]
+        }
+      }
+    },
+    "requirements": [
+      [
+        "has_green_herb",
+        "has_red_herb",
+        "has_blue_herb",
+        "has_mixed_herbs",
+        "has_empty_injector",
+        "has_steroids"
+      ]
+    ],
+    "rewards": {
+      "recipes": [
+        "resident_healing:empty_injector"
+      ]
+    }
+  }

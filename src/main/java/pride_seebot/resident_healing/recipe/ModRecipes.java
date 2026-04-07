@@ -9,11 +9,11 @@ import pride_seebot.resident_healing.ResidentHealing;
 
 public class ModRecipes {
     public static final RecipeSerializer<HerbMixingRecipe> HERB_MIXING = Registry.register(
-            Registries.RECIPE_SERIALIZER,
-            Identifier.of(ResidentHealing.MOD_ID, "herb_mixing"),
-            new SpecialRecipeSerializer<>(HerbMixingRecipe::new)
+            Registries.RECIPE_SERIALIZER, Identifier.of(ResidentHealing.MOD_ID, "herb_mixing"), new SpecialRecipeSerializer<>(HerbMixingRecipe::new)
     );
-
+    public static final RecipeSerializer<SteroidsRecipe> STEROIDS_CRAFTING = Registry.register(
+        Registries.RECIPE_SERIALIZER, Identifier.of(ResidentHealing.MOD_ID, "steroids_crafting"), new SpecialRecipeSerializer<>(SteroidsRecipe::new)
+    );
     public static void registerRecipes() {
     }
 }
