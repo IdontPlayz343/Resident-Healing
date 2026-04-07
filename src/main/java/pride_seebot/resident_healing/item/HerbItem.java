@@ -18,72 +18,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HerbItem extends Item {
-    
-    private final float healAmount; 
-    private final String useEffect;
+    private final float healAmount = 4.0f; //to be config driven
+    private final String color;
 
-    public HerbItem(float healAmount, String useEffect, Settings settings) {
+    public HerbItem(String color, Settings settings) {
         super(settings); 
-        this.useEffect = useEffect;
-        this.healAmount = healAmount; 
+        this.color = color;
     }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if ("heal".equals(this.useEffect)) {
-            tooltip.add(Text.translatable("tooltip.resident_healing.heal_amount", (int) this.healAmount/2)
-                .formatted(Formatting.GREEN));
-        } else if ("clearEffects".equals(this.useEffect)) {
-            tooltip.add(Text.translatable("tooltip.resident_healing.cleanses_poisons")
-                .formatted(Formatting.AQUA));
-        } else {
-            tooltip.add(Text.translatable("tooltip.resident_healing.multiplier_herb")
-                .formatted(Formatting.RED));
-        }
+        if ("green".equals(this.color)) {
+            tooltip.add(Text.translatable("tooltip.resident_healing.heal_amount", (int) this.healAmount/2).formatted(Formatting.GREEN));
+        } else if ("blue".equals(this.color)) {
+            tooltip.add(Text.translatable("tooltip.resident_healing.cleanses_poisons").formatted(Formatting.AQUA));
+        } else tooltip.add(Text.translatable("tooltip.resident_healing.multiplier_herb").formatted(Formatting.RED));
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
 
-        if ("none".equals(this.useEffect)) {
-            return TypedActionResult.pass(itemStack);
-        }
-
-        if (world.isClient()) {
-            return TypedActionResult.pass(itemStack);
-        }
-
-        boolean used = false;
-
-        if ("heal".equals(this.useEffect) && user.getHealth() < user.getMaxHealth()) {
-            user.heal(this.healAmount);
-            used = true;
-        } 
-        
-        else if ("clearEffects".equals(this.useEffect)) {
+        if ("red".equals(this.color)) return TypedActionResult.pass(itemStack);
+        if (world.isClient()) return TypedActionResult.pass(itemStack);
+        if ("green".equals(this.color)) {
+            if (user.getHealth() < user.getMaxHealth()) {
+                user.heal(this.healAmount);
+            } else return TypedActionResult.fail(itemStack);
+        } else if ("blue".equals(this.color)) {
             List<RegistryEntry<StatusEffect>> badEffects = new ArrayList<>();
-            for (StatusEffectInstance instance : user.getStatusEffects()) {
-                if (instance.getEffectType().value() == StatusEffects.POISON || instance.getEffectType().value() == StatusEffects.NAUSEA) {
-                    badEffects.add(instance.getEffectType());
-                }
-            }
-
+            for (StatusEffectInstance instance : user.getStatusEffects()) if (instance.getEffectType() == StatusEffects.POISON || instance.getEffectType() == StatusEffects.NAUSEA) badEffects.add(instance.getEffectType());
             if (!badEffects.isEmpty()) {
-                for (RegistryEntry<StatusEffect> effect : badEffects) {
-                    user.removeStatusEffect(effect);
-                }
-                used = true;
-            }
+                for (RegistryEntry<StatusEffect> effect : badEffects) user.removeStatusEffect(effect);
+            } else return TypedActionResult.fail(itemStack);
         }
 
-        if (used) {
-            if (!user.getAbilities().creativeMode) {
-                itemStack.decrement(1);
-            }
-            return TypedActionResult.success(itemStack);
-        }
-
-        return TypedActionResult.fail(itemStack);
+        if (!user.getAbilities().creativeMode) itemStack.decrement(1);
+        return TypedActionResult.success(itemStack);
     }
 }

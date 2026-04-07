@@ -11,7 +11,6 @@ import pride_seebot.resident_healing.item.ModItems;
 import java.util.List;
 
 public class SteroidsRecipe extends SpecialCraftingRecipe {
-
     public SteroidsRecipe(CraftingRecipeCategory craftingRecipeCategory) {
         super(craftingRecipeCategory);
     }
@@ -19,11 +18,7 @@ public class SteroidsRecipe extends SpecialCraftingRecipe {
     @Override
     public boolean matches(CraftingRecipeInput input, World world) {
         boolean hasInjector = false;
-        boolean hasGreen = false;
-        boolean hasRed = false;
-        boolean hasBlue = false;
         boolean hasAllHerbs = false;
-
         for (int i = 0; i < input.getSize(); i++) {
             ItemStack stack = input.getStackInSlot(i);
             if (stack.isEmpty()) continue;
@@ -33,20 +28,14 @@ public class SteroidsRecipe extends SpecialCraftingRecipe {
                 hasInjector = true;
             } else if (stack.isOf(ModItems.MIXED_HERBS)) {
                 List<String> contents = stack.get(ModDataComponentTypes.HERB_CONTENTS);
-                for (String herb : contents) {
-                    if (herb.equals("green")) hasGreen = true;
-                    if (herb.equals("red")) hasRed = true;
-                    if (herb.equals("blue")) hasBlue = true;
-                }
-                if (hasGreen && hasRed && hasBlue) {
+                if (contents.contains("green") && contents.contains("red") && contents.contains("blue")) {
                     if (hasAllHerbs) return false;
-                hasAllHerbs = true;
+                    hasAllHerbs = true;
                 }
             } else {
                 return false;
             }
         }
-
         if (!hasInjector || !hasAllHerbs) return false;
         return true;
     }
@@ -65,7 +54,7 @@ public class SteroidsRecipe extends SpecialCraftingRecipe {
     public ItemStack getResult(RegistryWrapper.WrapperLookup registriesLookup) {
         return new ItemStack(ModItems.STEROIDS);
     }
-
+    
     @Override
     public net.minecraft.recipe.RecipeSerializer<?> getSerializer() {
         return ModRecipes.STEROIDS_CRAFTING;

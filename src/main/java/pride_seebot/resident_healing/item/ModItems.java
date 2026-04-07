@@ -9,18 +9,12 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item GREEN_HERB = registerItem("green_herb", 
-        new HerbItem(4.0f, "heal", new Item.Settings().maxCount(1)));
-    public static final Item RED_HERB = registerItem("red_herb", 
-        new HerbItem(0.0f, "none", new Item.Settings().maxCount(1)));
-    public static final Item BLUE_HERB = registerItem("blue_herb", 
-        new HerbItem(2.0f, "clearEffects", new Item.Settings().maxCount(1)));
-    public static final Item MIXED_HERBS = registerItem("mixed_herbs", 
-        new MixedHerb(new Item.Settings().maxCount(1)));
-    public static final Item STEROIDS = registerItem("steroids", 
-        new InjectorItem("steroids", new Item.Settings().maxCount(1)));
-        public static final Item EMPTY_INJECTOR = registerItem("empty_injector", 
-        new Item(new Item.Settings().maxCount(1)));
+    public static final Item GREEN_HERB = registerItem("green_herb", new HerbItem("green", new Item.Settings().maxCount(1)));
+    public static final Item RED_HERB = registerItem("red_herb", new HerbItem("red", new Item.Settings().maxCount(1)));
+    public static final Item BLUE_HERB = registerItem("blue_herb", new HerbItem("blue", new Item.Settings().maxCount(1)));
+    public static final Item MIXED_HERBS = registerItem("mixed_herbs", new MixedHerbs(new Item.Settings().maxCount(1)));
+    public static final Item STEROIDS = registerItem("steroids", new InjectorItem("steroids", new Item.Settings().maxCount(1)));
+    public static final Item EMPTY_INJECTOR = registerItem("empty_injector", new Item(new Item.Settings().maxCount(1)));
 
     
     private static Item registerItem(String name, Item item) {
