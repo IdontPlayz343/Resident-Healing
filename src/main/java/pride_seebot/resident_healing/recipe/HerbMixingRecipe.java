@@ -11,6 +11,7 @@ import net.minecraft.recipe.input.CraftingRecipeInput;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Util;
 import net.minecraft.world.World;
+import pride_seebot.resident_healing.Config;
 import pride_seebot.resident_healing.component.ModDataComponentTypes;
 import pride_seebot.resident_healing.item.ModItems;
 
@@ -43,12 +44,11 @@ public class HerbMixingRecipe extends SpecialCraftingRecipe {
         int greenCount = 0;
         int redCount = 0;
         int blueCount = 0;
-
         for (int i = 0; i < input.getSize(); i++) {
             ItemStack stack = input.getStackInSlot(i);
             if (stack.isEmpty()) continue;
 
-            if (stack.isOf(Items.PAPER)) {
+            if (stack.isOf(Items.PAPER) && Config.requirePaperToCraft) {
                 if (hasPaper || hasMixedHerbs) return false;
                 hasPaper = true;
             } else if (stack.isOf(ModItems.MIXED_HERBS)) {
@@ -75,7 +75,12 @@ public class HerbMixingRecipe extends SpecialCraftingRecipe {
 
         int totalHerbs = greenCount + redCount + blueCount;
 
-        if (!hasPaper && !hasMixedHerbs || totalHerbs < 2 || totalHerbs > 3) return false;
+        if (Config.requirePaperToCraft) {
+            if ((!hasPaper && !hasMixedHerbs) || totalHerbs < 2 || totalHerbs > 3) return false;
+        } else {
+            if (totalHerbs < 2 || totalHerbs > 3) return false;
+        }
+        
         if (hasMixedHerbs && totalHerbs == 2) return false;
         if (redCount > 1 || blueCount > 1) return false; 
         return true;

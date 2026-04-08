@@ -14,14 +14,15 @@ import pride_seebot.resident_healing.util.ModLootTableModifiers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import eu.midnightdust.lib.config.MidnightConfig;
+
 public class ResidentHealing implements ModInitializer {
     public static final String MOD_ID = "resident_healing";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-
-
     @Override
     public void onInitialize() {
+        MidnightConfig.init(MOD_ID, Config.class);
         ModDataComponentTypes.registerDataComponentTypes();
         ModItems.registerModItems();
         ModRecipes.registerRecipes();

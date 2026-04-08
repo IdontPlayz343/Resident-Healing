@@ -13,6 +13,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import pride_seebot.resident_healing.Config;
 import pride_seebot.resident_healing.component.ModDataComponentTypes;
 import net.minecraft.text.Text;
 
@@ -21,9 +22,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MixedHerbs extends Item {
-    private final float healAmount = 4.0f; //to be config driven
-    private final float multiplierAmount = 2.5f; //to be config driven
-    private final float rgbMultiplierAmount = 5.0f; //to be config driven
     public MixedHerbs(Settings settings) {
         super(settings);
     }
@@ -45,11 +43,11 @@ public class MixedHerbs extends Item {
         float multiplier = 1.0f;
 
         for (String herb : contents) {
-            if (herb.equals("green")) heal += healAmount;
-            if (herb.equals("red")) multiplier = multiplierAmount;
+            if (herb.equals("green")) heal += Config.greenHerbHeal;
+            if (herb.equals("red")) multiplier = Config.redHerbMultiplier;
         }
         
-        if (contents.contains("green") && contents.contains("red") && contents.contains("blue")) multiplier = rgbMultiplierAmount;
+        if (contents.contains("green") && contents.contains("red") && contents.contains("blue")) multiplier = Config.rgbMultiplier;
 
         if (heal > 0) {
             float total = heal * multiplier;
@@ -89,10 +87,10 @@ public class MixedHerbs extends Item {
         }
 
         for (String herb : contents) {
-            if (herb.equals("green")) totalHeal += healAmount;
-            if (herb.equals("red")) multiplier = multiplierAmount;
+            if (herb.equals("green")) totalHeal += Config.greenHerbHeal;
+            if (herb.equals("red")) multiplier = Config.redHerbMultiplier;
         }
-        if (contents.contains("green") && contents.contains("red") && contents.contains("blue")) multiplier = rgbMultiplierAmount;
+        if (contents.contains("green") && contents.contains("red") && contents.contains("blue")) multiplier = Config.rgbMultiplier;
         user.heal(totalHeal * multiplier);
         if (contents.contains("blue")) {
             for (RegistryEntry<StatusEffect> effect : badEffects) user.removeStatusEffect(effect);
