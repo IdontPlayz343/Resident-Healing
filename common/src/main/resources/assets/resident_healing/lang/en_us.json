@@ -1,0 +1,41 @@
+{
+  "item.resident_healing.green_herb": "Green Herb",
+  "item.resident_healing.red_herb": "Red Herb",
+  "item.resident_healing.blue_herb": "Blue Herb",
+
+  "tooltip.resident_healing.multiplier_herb": "Multiplies the effects of other herbs.",
+  "tooltip.resident_healing.heal_amount": "Heals %s hearts of health.",
+  "tooltip.resident_healing.cleanses_poisons": "Cures Poison and Nausea.",
+  "tooltip.resident_healing.cleanses": "Removes all harmful status effects.",
+
+  "item.resident_healing.empty_injector": "Empty Injector",
+
+  "item.resident_healing.steroids": "Steroids",
+  "message.resident_healing.max_steroids": "Your body can't handle more steroids.",
+  "tooltip.resident_healing.boost_health": "Boosts max health by 5 hearts, maximum 2 uses.",
+
+  "item.resident_healing.mixed_herbs": "Mixed Herbs",
+  "item.resident_healing.mixed_herbs.empty": "Uncraftable Mixed Herbs",
+
+  "resident_healing.midnightconfig.title": "Resident Healing",
+  "resident_healing.midnightconfig.category.healing": "Healing Values",
+  "resident_healing.midnightconfig.category.crafting": "Crafting Settings",
+  "resident_healing.midnightconfig.category.looting": "Loot Spawns",
+
+  "resident_healing.midnightconfig.herbChestChance": "Herb Chest Chance",
+  "resident_healing.midnightconfig.herbChestChance.tooltip": "Chance for Herbs to appear in Villager/Illager chests.",
+
+  "resident_healing.midnightconfig.greenHerbHeal": "Green Herb Healing",
+  "resident_healing.midnightconfig.greenHerbHeal.tooltip": "Amount of health Green Herbs restore in half hearts.",
+
+  "resident_healing.midnightconfig.redHerbMultiplier": "Red Herb Multiplier",
+  "resident_healing.midnightconfig.redHerbMultiplier.tooltip": "How much Red Herbs multiply Green Herb healing.",
+
+  "resident_healing.midnightconfig.rgbMultiplier": "RGB Multiplier",
+  "resident_healing.midnightconfig.rgbMultiplier.tooltip": "How much the Green Herb's healing is multiplied when in combined with a Red Herb and Blue Herb.",
+
+  "resident_healing.midnightconfig.requirePaperToCraft": "Require Paper",
+  "resident_healing.midnightconfig.requirePaperToCraft.tooltip": "If true, Paper is required to craft Mixed Herbs, unless combining Mixed Herbs with another Herb."
+
+
+}

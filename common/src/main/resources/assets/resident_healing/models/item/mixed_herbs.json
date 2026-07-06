@@ -1,0 +1,9 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "resident_healing:item/mixed_layer_0",
+      "layer1": "resident_healing:item/herb_layer_1",
+      "layer2": "resident_healing:item/herb_layer_2",
+      "layer3": "resident_healing:item/herb_layer_3"
+    }
+  }
